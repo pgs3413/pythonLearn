@@ -1,0 +1,119 @@
+可直接使用：print() input("...") type() str() sorted() len() list(range())
+min() max() sum() id() set() float() int() bool()
+
+关键字：not in , is(区别于==), and,or
+
+字符串：不可更改 可用索引
+capitalize() 第一个字母变大写 
+title() 每一个单词的首字母变大写
+find(str,start,end) index(str)   count(str)
+replace() split() rfind() rindex() partition()
+lower() upper()  startswith(str) endswith(str)
+strip() rstrip() splitlines() join()
+isalpha() isdight() isalnum() isspace()
+
+数组：append() insert() del pop() remove() sort() reverse()
+数组的切片：list[a:b] list[a:] list[:b] list[:] 也能用负号
+
+for in 
+java:for(int x:a){}
+js:for(var x in a){}
+python:for x in a :
+
+for a in range(1,5):
+range(a,b)-->[a,a+1,...,b-1]
+
+元祖：() 列表：[] 
+字典：{} 属性名也要引号 键值对：item(元祖) 属性名：key 属性值：value
+方法：items() keys() values()
+遍历字典：for k,v in a.items() :
+
+条件语句：
+java c js ：if(){} else if(){} else()
+python :  if 条件 : elif 条件 :else :
+
+input() 接受都为字符串 
+
+while循环：
+java ：while(){}
+python: while 条件 :
+
+函数定义：
+java：public static void fun(..){..}
+js: function fun(..){..}
+python: def fun(..): ..
+参数：可赋默认值 *b:b为参数列表 **b:b为参数字典
+
+import test.py test.fun()
+from test.py import fun as f f()
+from test import * fun()
+
+python内置模块
+
+os 用来调用操作系统方法：
+os.name os.path os.sep os.path.abspath() 
+
+ sys :系统功能
+sys.exit() sys.path 
+
+math ,random ,datetime，calender ,copy 
+
+time :操作时间 time.time() time.sleep(10) 单位为秒 
+
+hashlib ,hmac：提供字符加密功能
+
+uuid:用来生成一个全局唯一的模块
+uuid.uuid1() 生成全球唯一的uuid
+
+pip命令 下载第三方库
+pip install <包名> 
+
+__name__:当直接运行，值是__main__ 当被导入时，值是文件名
+if  __name__ == '__main__' : ..
+
+类：
+class className():
+    def __init__(self,a,b,..):self.a=a...
+    def functionName(self,a,b..):..
+
+实例化：(不用new) class=className(a,b,...) 调用__init__
+class.a class.functionName(a,b,..)
+
+继承：
+class className2(className):
+    def __init__(self,a,b,...):
+        super().__init__(a,b)
+
+
+文件： with open(路径名) as 别名(file)：
+方法：file.read() 返回一个字符串 file.readlines() 返回一个字符串数组 
+for line in file: 遍历每一行
+
+open(路径名，'a') 可写文件
+方法：file.write()
+
+异常处理：
+java: try{}catch(Exception e){}
+python: try:...except Error:
+
+print用法：
+print("%d"%1)
+print("%03d"%1)
+print("%.2f"%2.333)
+print("%03d %.3f"%(1,2.333))
+name='pan'
+age=18
+print(f"我是{name}，我{age}岁了")
+print("lalala",end='..')
+print("lla")
+
+三元运算符：
+java : c=a>b?a:b
+python: c=a if a>b else b
+
+for x in xx:..
+else:.. 正常循环结束会执行
+
+json.dump() json.load()
+
+-i https://pypi.tuna.tsinghua.edu.cn/simple

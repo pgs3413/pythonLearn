@@ -1,0 +1,47 @@
+协程函数 async def 函数名
+协程对象 执行 协程函数（） 得到协程对象 （不执行内部代码）
+
+事件循环 执行内部代码
+import asyncio
+loop=asyncio.get_event_loop()
+loop.run_until_complete(协程函数（）)
+
+python3.7后
+asyncio.run(协程函数（）) 运行协程函数代码
+
+await关键字 会阻塞
+response=await+可等待对象（协程对象，Future，Task对象 -＞　ＩＯ等待）
+response=await 协程函数（） response为协程函数返回值
+
+Task对象 在事件循环中添加多个任务
+python3.7后 asyncio.create_task(协程函数(),name="..") 把一个协程对象包装成一个任务对象
+asyncio.ensure_future()
+创建Task对象时，将任务加入到事件循环
+await Task对象 此处await是等待相对应的协程全部执行完毕并获取结果
+
+task.add_done_callback(funName)
+
+task_list=[任务对象1，任务对象2，任务对象3....]
+done,pending=await asyncio.wait(task_list timeout=None) done为返回值集合
+
+task_list=[协程函数（）,协程函数（）,协程函数（）... ]
+done,pending=asyncio.run(asyncio.wait(task_list))
+
+loop=asyncio.get_event_loop()
+loop.run_until_complete(asyncio.wait(task_list))
+
+主协程main 生成副协程，包装成任务,任务列表，等待任务
+async.run(main())
+
+在asyncio中遇到阻塞操作必须进行手动挂起（await)
+
+aiohttp 基于异步网络请求的模块
+使用该模块中的ClientSession
+
+async with aiohttp.ClientSession() as session:
+    headers,params/data,proxy="http://ip:port"
+    async with await session.get(url，headers=headers...) as response:
+        page_text=await response.text() 获取响应数据操作之前要用await手动挂起
+        text()返回字符串 read()返回二进制数据 json()返回json对象
+
+

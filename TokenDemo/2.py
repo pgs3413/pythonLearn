@@ -1,0 +1,8 @@
+from itsdangerous import TimedJSONWebSignatureSerializer as Se
+
+token="eyJhbGciOiJIUzUxMiIsImlhdCI6MTU5ODkzOTY4OCwiZXhwIjoxNTk4OTM5ODA4fQ.eyJ1c2VyX2lkIjozNDN9.LRh4jytEzVMHzbDbdEjmR_VuSZoL7n_k8ZdPMiHgp6XGLc8lPSgypJ-y0xYk5TJaj3ahjJjTIOctKHn4ryqvZg
+"
+secret_key='oweirnwert'
+s=Se(secret_key)
+data=s.loads(token)
+print(data)
